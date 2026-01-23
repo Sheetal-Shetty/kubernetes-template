@@ -1,0 +1,40 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: k8s-guest-template
+  title: Kubernetes Guest Component
+  description: Creates a Backstage component showing Kubernetes info for guests
+spec:
+  owner: guests
+  type: service
+
+  parameters:
+    - title: Component Info
+      required:
+        - name
+        - kubernetesId
+      properties:
+        name:
+          title: Component Name
+          type: string
+        kubernetesId:
+          title: Kubernetes App Label
+          type: string
+          description: Must match app=<value> label in Kubernetes
+
+  steps:
+    - id: register
+      name: Register component
+      action: catalog:register
+      input:
+        catalogInfo:
+          apiVersion: backstage.io/v1alpha1
+          kind: Component
+          metadata:
+            name: ${{ parameters.name }}
+            annotations:
+              backstage.io/kubernetes-id: ${{ parameters.kubernetesId }}
+          spec:
+            type: service
+            owner: guests
+            lifecycle: experimental
