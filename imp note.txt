@@ -25,5 +25,26 @@ kubectl create token backstage -n default
 kubectl --token=<token> get pods -A
 export K8S_SA_TOKEN=<token>
 
+other commands
+  353  kubectl create clusterrolebinding backstage-admin   --clusterrole=cluster-admin   --serviceaccount=default:backstage
+  354  kubectl get clusterrolebinding backstage-admin -o yaml
+  355  kubectl delete clusterrolebinding backstage-admin
+  356  kubectl create clusterrolebinding backstage-admin   --clusterrole=cluster-admin   --serviceaccount=default:backstage
+  357  kubectl get clusterrolebinding backstage-admin -o yaml
+370  kubectl auth can-i list pods --as=system:serviceaccount:default:backstage 
+-o/p yes
+  371  kubectl auth can-i list services --as=system:serviceaccount:default:backstage 
+o/p yes
+  372  echo $K8S_SA_TOKEN | wc -c
+o/p !=0
+
+
+
+to check lables
+  360  kubectl get pod demo-app-59f4bd8f8c-2b5sn -n default --show-labels
+  361  kubectl get pod -n default --show-labels | grep cafestatic
+  362  kubectl get deployment cafestatic -n default --show-labels
+
+
 
 
