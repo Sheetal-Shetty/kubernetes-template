@@ -5,8 +5,8 @@ metadata:
   description: An example of a Backstage application.
   annotations:
     #backstage.io/kubernetes-id: example-website
-    backstage.io/kubernetes-id: pythonmonitor
-    #backstage.io/view-url: http://cafestatic.local
+     backstage.io/kubernetes-id: pythonmonitor
+   
   # Example for optional annotations
   # annotations:
   #   github.com/project-slug: backstage/backstage
