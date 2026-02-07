@@ -7,5 +7,23 @@ export K8S_SA_TOKEN=eyJhbGciOiJSUzI1NiIsImtpZCI6InFmb3loR2x1MXd3TVZFWDFSWEhQb2FK
 
 
 #Kubernetes plugin to work we
-under label below ap
+under label below app
 backstage.io/kubernetes-id: <name should match catolog name>
+  labels:
+    app: cafestatic
+    backstage.io/kubernetes-id: cafestatic
+  name: cafestatic
+
+
+KUBE_EDITOR="nano" kubectl edit deployment cafestatic -n default
+kubectl rollout restart deployment cafestatic -n default
+
+
+kubectl get serviceaccount backstage -n default
+kubectl get serviceaccount backstage -n default
+kubectl create token backstage -n default
+kubectl --token=<token> get pods -A
+export K8S_SA_TOKEN=<token>
+
+
+
