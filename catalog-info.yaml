@@ -6,10 +6,6 @@ metadata:
   annotations:
     #backstage.io/kubernetes-id: example-website
     backstage.io/kubernetes-id: cafestatic
-  links:
-    - url: http://cafestatic.local
-      title: Live Website
-      icon: dashboard
     #backstage.io/view-url: http://cafestatic.local
   # Example for optional annotations
   # annotations:
