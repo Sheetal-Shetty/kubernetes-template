@@ -17,3 +17,7 @@ spec:
   #owner: john@example.com
   owner: guests
   lifecycle: experimental
+  links:
+    - url: http://cafestatic.local
+      title: Live Website
+      icon: web
